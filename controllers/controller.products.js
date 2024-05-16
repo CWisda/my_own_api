@@ -1,7 +1,7 @@
 import query from "../config/connection";
 
 async function findOne(id) {
-  return await query("SELECT * FROM towns WHERE townsID = ?", [id]);
+  return await query("SELECT * FROM towns WHERE ID = ?", [id]);
 }
 
 async function findAll() {
@@ -13,11 +13,11 @@ async function addOne(newData) {
 }
 
 async function updateOne(id, data) {
-  return await query("UPDATE towns SET ? WHERE townsID = ?", [data, id]);
+  return await query("UPDATE towns SET ? WHERE ID = ?", [data, id]);
 }
 
 async function removeOne(id) {
-  return await query("DELETE FROM towns WHERE townsID = ?", [id]);
+  return await query("DELETE FROM towns WHERE ID = ?", [id]);
 }
 export { 
     findOne, 
